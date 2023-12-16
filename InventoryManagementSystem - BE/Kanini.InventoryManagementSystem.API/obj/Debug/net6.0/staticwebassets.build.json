@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "IKNMJ3YqI5FzgUmtxfqFdGStfNjGKCS6chu9+C/aVZM=",
+  "Source": "Kanini.InventoryManagementSystem.API",
+  "BasePath": "_content/Kanini.InventoryManagementSystem.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
