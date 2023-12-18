@@ -65,3 +65,4 @@ A:\Kanini\RASC Project Assessments\InventoryManagementSystem - BE\Kanini.Invento
 A:\Kanini\RASC Project Assessments\InventoryManagementSystem - BE\Kanini.InventoryManagementSystem.API\obj\Debug\net6.0\Kanini.InventoryManagementSystem.API.pdb
 A:\Kanini\RASC Project Assessments\InventoryManagementSystem - BE\Kanini.InventoryManagementSystem.API\obj\Debug\net6.0\Kanini.InventoryManagementSystem.API.genruntimeconfig.cache
 A:\Kanini\RASC Project Assessments\InventoryManagementSystem - BE\Kanini.InventoryManagementSystem.API\obj\Debug\net6.0\ref\Kanini.InventoryManagementSystem.API.dll
+A:\Kanini\RASC Project Assessments\InventoryManagementSystem - BE\Kanini.InventoryManagementSystem.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

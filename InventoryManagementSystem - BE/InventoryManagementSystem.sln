@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kanini.InventoryManagementSystem.API", "Kanini.InventoryManagementSystem.API\Kanini.InventoryManagementSystem.API.csproj", "{FC429A41-34E4-4BD8-9022-E1029639B8ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kanini.InventoryManagementSystem.API", "Kanini.InventoryManagementSystem.API\Kanini.InventoryManagementSystem.API.csproj", "{FC429A41-34E4-4BD8-9022-E1029639B8ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kanini.InventoryManagementSystem.Tests", "Kanini.InventoryManagementSystem.Tests\Kanini.InventoryManagementSystem.Tests.csproj", "{C37A1A9A-24E2-4F20-B044-23B2BED1D23D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{FC429A41-34E4-4BD8-9022-E1029639B8ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC429A41-34E4-4BD8-9022-E1029639B8ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC429A41-34E4-4BD8-9022-E1029639B8ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C37A1A9A-24E2-4F20-B044-23B2BED1D23D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C37A1A9A-24E2-4F20-B044-23B2BED1D23D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C37A1A9A-24E2-4F20-B044-23B2BED1D23D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C37A1A9A-24E2-4F20-B044-23B2BED1D23D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

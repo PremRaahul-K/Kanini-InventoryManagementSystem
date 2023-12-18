@@ -1,7 +1,7 @@
 ﻿using Dapper;
-using Kanini.InventoryManagementSystem.API.Entities;
-using Kanini.InventoryManagementSystem.API.Entities.DapperContext;
-using Kanini.InventoryManagementSystem.API.Entities.DataTransferObjects;
+using Kanini.InventoryManagementSystem.API.Models;
+using Kanini.InventoryManagementSystem.API.Models.DapperContext;
+using Kanini.InventoryManagementSystem.API.Models.DataTransferObjects;
 using Kanini.InventoryManagementSystem.API.Interfaces;
 using System.Data;
 
@@ -53,7 +53,7 @@ namespace Kanini.InventoryManagementSystem.API.Repositories
             var query = "SELECT * FROM Products WHERE Id = @Id";
             using (var connection = _context.CreateConnection())
             {
-                var product = await connection.QueryFirstOrDefaultAsync<Product>(query, new {id});
+                var product = await connection.QuerySingleOrDefaultAsync<Product>(query, new {id});
                 return product;
             }
         }

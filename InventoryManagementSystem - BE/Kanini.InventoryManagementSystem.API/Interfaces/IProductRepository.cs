@@ -1,5 +1,5 @@
-﻿using Kanini.InventoryManagementSystem.API.Entities;
-using Kanini.InventoryManagementSystem.API.Entities.DataTransferObjects;
+﻿using Kanini.InventoryManagementSystem.API.Models;
+using Kanini.InventoryManagementSystem.API.Models.DataTransferObjects;
 
 namespace Kanini.InventoryManagementSystem.API.Interfaces
 {

@@ -1,7 +1,9 @@
-﻿using Kanini.InventoryManagementSystem.API.Entities;
-using Kanini.InventoryManagementSystem.API.Entities.DataTransferObjects;
+﻿using Kanini.InventoryManagementSystem.API.Models;
+using Kanini.InventoryManagementSystem.API.Models.DataTransferObjects;
 using Kanini.InventoryManagementSystem.API.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Kanini.InventoryManagementSystem.API.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Kanini.InventoryManagementSystem.API.Controllers
 {
@@ -9,10 +11,11 @@ namespace Kanini.InventoryManagementSystem.API.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private readonly IProductRepository _productRepository;
-        public ProductsController(IProductRepository productRepository)
+        private readonly IProductService _productService;
+
+        public ProductsController(IProductService productService)
         {
-            _productRepository = productRepository;
+            _productService = productService;
         }
 
         [HttpGet]
@@ -20,7 +23,7 @@ namespace Kanini.InventoryManagementSystem.API.Controllers
         {
             try
             {
-                var products = await _productRepository.GetProducts();
+                var products = await _productService.GetProducts();
                 return Ok(products);
             }
             catch (Exception ex)
@@ -34,7 +37,7 @@ namespace Kanini.InventoryManagementSystem.API.Controllers
         {
             try
             {
-                var product = await _productRepository.GetProduct(id);
+                var product = await _productService.GetProduct(id);
                 if (product == null)
                 {
                     return NotFound();
@@ -52,7 +55,7 @@ namespace Kanini.InventoryManagementSystem.API.Controllers
         {
             try
             {
-                var createdProduct = await _productRepository.CreateProduct(product);
+                var createdProduct = await _productService.CreateProduct(product);
                 return CreatedAtRoute("ProductById", new { id = createdProduct.Id }, createdProduct);
             }
             catch (Exception ex)
@@ -62,14 +65,15 @@ namespace Kanini.InventoryManagementSystem.API.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Roles = "WarehouseManager")]
         public async Task<IActionResult> UpdateProductQuantity(int id, ProductQuantityForUpdateDto product)
         {
             try
             {
-                var dbProduct = await _productRepository.GetProduct(id);
+                var dbProduct = await _productService.GetProduct(id);
                 if (dbProduct == null)
                     return NotFound();
-                await _productRepository.UpdateProduct(id, product);
+                await _productService.UpdateProductByQuantity(id, product);
                 return NoContent();
 
             }
@@ -84,10 +88,10 @@ namespace Kanini.InventoryManagementSystem.API.Controllers
         {
             try
             {
-                var dbProduct = await _productRepository.GetProduct(id);
+                var dbProduct = await _productService.GetProduct(id);
                 if (dbProduct == null)
                     return NotFound();
-                await _productRepository.DeleteProduct(id);
+                await _productService.DeleteProduct(id);
                 return NoContent();
             }
             catch (Exception ex)

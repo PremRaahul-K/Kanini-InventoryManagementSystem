@@ -25,14 +25,18 @@ INSERT INTO Products (Name, Description, Quantity, Price) VALUES
 ('Product4', 'Description for Product4', 10, 49.99);
 GO
 
-select * from products;
-GO
+
 
 CREATE TABLE Users
 (
     Id INT PRIMARY KEY IDENTITY(1,1),
-    Email NVARCHAR(255) NOT NULL,
+    Username NVARCHAR(255) NOT NULL UNIQUE,
     PasswordHash VARBINARY(MAX) NOT NULL,
     PasswordKey VARBINARY(MAX) NOT NULL,
     Role NVARCHAR(50) NOT NULL
 );
+GO
+
+select * from products;
+GO
+select *  from users;
