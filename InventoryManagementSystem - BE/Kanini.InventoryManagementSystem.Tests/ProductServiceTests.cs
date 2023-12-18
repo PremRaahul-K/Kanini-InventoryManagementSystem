@@ -1,4 +1,5 @@
 using Kanini.InventoryManagementSystem.API.Interfaces;
+using Kanini.InventoryManagementSystem.API.Models;
 using Kanini.InventoryManagementSystem.API.Models.DataTransferObjects;
 using Kanini.InventoryManagementSystem.API.Services;
 using Moq;
@@ -21,6 +22,20 @@ namespace Kanini.InventoryManagementSystem.Tests
 
             // Assert
             repositoryMock.Verify(r => r.CreateProduct(It.IsAny<ProductForCreationDto>()), Times.Once);
+            // Additional assertions to check if the product is added to the repository
+            repositoryMock.Verify(r => r.CreateProduct(It.Is<ProductForCreationDto>(p => p.Name == "TestProduct" && p.Quantity == 10 && p.Price == 20.0)), Times.Once);
+
+            // You might want to mock a method to retrieve the added product and then assert its existence
+            repositoryMock.Setup(r => r.GetProduct(It.IsAny<int>())).ReturnsAsync(new Product { Id = 1, Name = "TestProduct", Quantity = 10, Price = 20.0 });
+
+            // Act: Retrieve the added product
+            var addedProduct = await productService.GetProduct(1);
+
+            // Assert: Check if the retrieved product matches the expected data
+            Assert.That(addedProduct, Is.Not.Null);
+            Assert.That(addedProduct.Name, Is.EqualTo("TestProduct"));
+            Assert.That(addedProduct.Quantity, Is.EqualTo(10));
+            Assert.That(addedProduct.Price, Is.EqualTo(20.0));
         }
 
         [Test]

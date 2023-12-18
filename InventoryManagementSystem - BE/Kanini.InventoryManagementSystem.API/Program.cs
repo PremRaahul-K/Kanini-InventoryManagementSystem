@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi.Models;
+using Kanini.InventoryManagementSystem.API.Caching;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,15 +27,6 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         ValidateIssuer = false,
         ValidateAudience = false
     };
-});
-builder.Services.AddCors(opts =>
-{
-    opts.AddPolicy("MyCors", policy =>
-    {
-        policy.AllowAnyHeader()
-        .AllowAnyMethod()
-        .AllowAnyOrigin();
-    });
 });
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -65,6 +57,15 @@ builder.Services.AddSwaggerGen(c => {
         }
     });
 });
+
+var configuration = builder.Configuration;
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = configuration.GetConnectionString("redis-cache");
+    options.InstanceName = "Product-Cache"; // Optional: You can omit this if not needed.
+});
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -75,7 +76,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseAuthentication();
-app.UseCors("MyCors");
 app.UseAuthorization();
 
 app.MapControllers();

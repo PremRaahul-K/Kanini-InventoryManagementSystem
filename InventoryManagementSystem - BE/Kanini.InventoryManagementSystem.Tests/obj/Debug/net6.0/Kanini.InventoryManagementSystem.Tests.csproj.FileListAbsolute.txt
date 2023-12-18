@@ -147,3 +147,11 @@ A:\Kanini\RASC Project Assessments\InventoryManagementSystem - BE\Kanini.Invento
 A:\Kanini\RASC Project Assessments\InventoryManagementSystem - BE\Kanini.InventoryManagementSystem.Tests\obj\Debug\net6.0\Kanini.InventoryManagementSystem.Tests.pdb
 A:\Kanini\RASC Project Assessments\InventoryManagementSystem - BE\Kanini.InventoryManagementSystem.Tests\obj\Debug\net6.0\Kanini.InventoryManagementSystem.Tests.genruntimeconfig.cache
 A:\Kanini\RASC Project Assessments\InventoryManagementSystem - BE\Kanini.InventoryManagementSystem.Tests\obj\Debug\net6.0\ref\Kanini.InventoryManagementSystem.Tests.dll
+A:\Kanini\RASC Project Assessments\InventoryManagementSystem - BE\Kanini.InventoryManagementSystem.Tests\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+A:\Kanini\RASC Project Assessments\InventoryManagementSystem - BE\Kanini.InventoryManagementSystem.Tests\bin\Debug\net6.0\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+A:\Kanini\RASC Project Assessments\InventoryManagementSystem - BE\Kanini.InventoryManagementSystem.Tests\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+A:\Kanini\RASC Project Assessments\InventoryManagementSystem - BE\Kanini.InventoryManagementSystem.Tests\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+A:\Kanini\RASC Project Assessments\InventoryManagementSystem - BE\Kanini.InventoryManagementSystem.Tests\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+A:\Kanini\RASC Project Assessments\InventoryManagementSystem - BE\Kanini.InventoryManagementSystem.Tests\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+A:\Kanini\RASC Project Assessments\InventoryManagementSystem - BE\Kanini.InventoryManagementSystem.Tests\bin\Debug\net6.0\Pipelines.Sockets.Unofficial.dll
+A:\Kanini\RASC Project Assessments\InventoryManagementSystem - BE\Kanini.InventoryManagementSystem.Tests\bin\Debug\net6.0\StackExchange.Redis.dll
