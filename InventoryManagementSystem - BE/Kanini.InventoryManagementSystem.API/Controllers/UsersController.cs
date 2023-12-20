@@ -1,11 +1,14 @@
 ﻿using Kanini.InventoryManagementSystem.API.Interfaces;
 using Kanini.InventoryManagementSystem.API.Models.DataTransferObjects;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Kanini.InventoryManagementSystem.API.Controllers
 {
     [Route("api/users")]
     [ApiController]
+    [EnableCors("MyCors")]
+
     public class UsersController : ControllerBase
     {
         private readonly IManageUserActions _manageUserActions;

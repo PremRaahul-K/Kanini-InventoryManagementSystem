@@ -4,11 +4,14 @@ using Kanini.InventoryManagementSystem.API.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Kanini.InventoryManagementSystem.API.Services;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 
 namespace Kanini.InventoryManagementSystem.API.Controllers
 {
     [Route("api/products")]
     [ApiController]
+    [EnableCors("MyCors")]
+
     public class ProductsController : ControllerBase
     {
         private readonly IProductService _productService;
@@ -65,7 +68,7 @@ namespace Kanini.InventoryManagementSystem.API.Controllers
         }
 
         [HttpPut("{id}")]
-        [Authorize(Roles = "WarehouseManager")]
+        //[Authorize(Roles = "WarehouseManager")]
         public async Task<IActionResult> UpdateProductQuantity(int id, ProductQuantityForUpdateDto product)
         {
             try
