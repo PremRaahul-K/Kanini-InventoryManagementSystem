@@ -30,9 +30,10 @@ const slice = createSlice({
     },
     productQuantityUpdated: (products, action) => {
       const { productId, newQuantity } = action.payload;
+      console.log(action.payload);
       const updatedList = products.list.map((product) =>
         product.id === productId
-          ? { ...product, quantity: newQuantity.Quantity }
+          ? { ...product, quantity: newQuantity.quantity }
           : product
       );
       products.list = updatedList;

@@ -1,6 +1,5 @@
 import axios from "axios";
 import * as actions from "../api";
-
 const api =
   ({ dispatch, getState }) =>
   (next) =>
@@ -18,7 +17,6 @@ const api =
         data,
       });
       if (payload) {
-        console.log(payload);
         dispatch({
           type: onSuccess,
           payload: { ...response.data, ...payload },
@@ -32,10 +30,10 @@ const api =
       }
     } catch (error) {
       console.log(error.message);
-      // dispatch({
-      //   type: onError,
-      //   payload: error.message,
-      // });
+      dispatch({
+        type: onError,
+        payload: error.message,
+      });
     }
   };
 
